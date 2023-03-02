@@ -131,8 +131,8 @@ If the previous steps were done in the order of these instructions, you should s
 This tells us that the most recent packet that was sent from head office (which turned on the Light in the branch office) was sent from an IP address of 10.1.1.3
 
 •	Give three examples of popular application layer protocols with well-known TCP port numbers?  
-
-
+	
+	DNS(port 53), HTTP (443)0, FTP(port 20 and 21)
 ## Send from a Spoofed Source IP Address 
 
 To get past the Branch Router firewall, the attacker might use special software and methods to modify the source address of a packet before trying to send an HTTP request to the Branch Server. 
@@ -152,7 +152,7 @@ The Attacker’s Router would also need to be reconfigured to suit. Rather than 
 11.	A menu will pop up showing the available ports. Choose GigabitEthernet0/1
 
 •	What is Spoofing? 
-
+Spoofing is pretend to be a trusted source 
 
 ## Gain Access through the [Firewall](https://www.simplilearn.com/tutorials/cyber-security-tutorial/what-is-firewall)
 1.	Click the Attacker’s PC to open a window. 

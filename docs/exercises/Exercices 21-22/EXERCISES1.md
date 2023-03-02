@@ -2,11 +2,16 @@
 
 ## A. Intro to CIA/AAA/Threat/Security Principles
 1. Let us assume tha mayor of Bristol wants to release a public notice on an important issue. Which of the CIA properties should be enforced and why?
+`Integrity and availability should be enforced. Availability is to show that authorized users should not be denied `
 
 2. Explain why someone need not worry about being a victim of a social engineering attack through their cell phone if they are inside of a Faraday cage.
+`This a physical security,no signal can reach the person`
 
 3. With respect to the C.I.A. and A.A.A. concepts, what risks are posed by Trojan horses?
-design).
+`Confidentiality is broken by someone could snitch...
+ Integrity can be violated if some soldier gave the wrong order. Availability is violated if someone did not get the order. Authenticity are all risked(AAA r for authenticity, assurance, anonymity `
+
+
 4. With respect to the C.I.A. and A.A.A. concepts, what risks are posed by someone making so many download requests from an online music store that it prevents other users from being able to download any songs?
 	
 5. Give an example of the false sense of security that can come from using the “security by obscurity” approach.
@@ -105,7 +110,7 @@ b. . In the C code above, if you compile the code for x86-32 system, at the line
 ## Answers
 - **ANS A.1:** Integrity and Availability. **I** because noone should be able to alter it in unintended way and **A** because it should be available to the public to see.
 - **ANS A.2:** becuase there will be no signal to get connected to the site if that was the intention of the attacker.
-- **ANS A.3:** a trojan horse can violate all of the CIA, by leaking info,modifying files, and deleting files. For AAA, it can sabotage authenticity (by 
+- **ANS A.3:** a trojan horse can violate all of the CIA, by leaking info,modifying files, and deleting files. For AAA, it can sabotage authenticity (by design).
 - **ANS A.4:** CIA- availability, AAA- assurance.
 - **ANS A.5:** using a encryption scheme that is not public, thinking that no one will break it if they don't know about. Anothe example is hard coded secrets in the binary thinking that no one will know about them.
 - **ANS A.6:** It is simple desigin, thus *economy of mechanism* prnciple is followed. However, proprietary encryption shceme is a bad idea (*Open design* principle). Protecting it with a PIN is good (confidentiality and Assurance). However, 4-digit PIN may be a weak protection.
