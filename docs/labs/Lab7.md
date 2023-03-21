@@ -1,6 +1,6 @@
-# Lab 5: Introduction to OS/161
+# Lab 7: Introduction to Operating Systems (OS/161 as case study)
 
-In this lab, youw ill get familiar with Operating systems, explore OS/161 which an operating system made for teaching purposes. You will get to know how to configure and build operating systems.
+In this lab, youw ill get familiar with Operating Systems, explore OS/161 which an operating system made for teaching purposes. You will get to know how to configure and build operating systems.
 
 You need to complete [LAB 5](https://github.com/cs-uob/COMS20012/blob/master/docs/labs/lab%205.md) in order to do this lab.
 
@@ -70,6 +70,7 @@ First you need to `ssh` in your guest virtual machine:
 ```
 vagrant ssh
 ```
+The default user and hostname is trinity@zion. 
 
 Now all that is left for you to do is to access the OS/161 source code:
 ```
@@ -173,9 +174,7 @@ You should be able to answer the following questions:
 Now let's try to play with configuration:
 1. Boot your OS/161 kernel with a different number of cores (say... 4)
 2. Try booting with 256K of memory. What happens?
-3. Configure System/161 to use a fixed value to initialize its random number
-    generator. (This can be helpful when debugging non-deterministic
-    kernel behavior.)
+
 
 ## Exploring OS/161
 
@@ -294,7 +293,7 @@ synchronization primitives.
 This is where you will add code to create and manage user level processes.
 As it stands now, OS/161 runs only kernel threads—​there is no support for user
 level code. (Try running the shell from the OS/161 menu and see what happens.)
-In [LAB 7](./LAB7.html), you’ll implement this support.
+
 
 #### `kern/vm/`
 
@@ -319,10 +318,8 @@ You may find standard UNIX utilities like `find` and `grep` useful when
 searching through your OS/161 source code.
 
 1. What function initializes the kernel during boot, and what subsystems are currently initialized?
-2. OS/161 ships with two working synchronization primitives. What are they?
-3. OS/161 has a system for printing debugging messages to the console. How does it work? How could it be useful?
-4. What do copyin and copyout do? What is special about these functions compared to other approaches to copying memory in C, like [memmove](http://www.cplusplus.com/reference/cstring/memmove/){:target="_blank"}?
-5. Explain the difference between machine dependent and machine independent code. Where would you put both in the OS/161 source tree?
+2. OS/161 has a system for printing debugging messages to the console. How does it work? How could it be useful?
+3. What do copyin and copyout do? What is special about these functions compared to other approaches to copying memory in C, like [memmove](http://www.cplusplus.com/reference/cstring/memmove/)?
 
 ## Using GDB
 
@@ -447,12 +444,7 @@ tasks, it calls `mainbus_poweroff` to shut off the electricity on the system
 board. At that point System/161 will exit, and GDB will print
 `Remote connection closed` and you're done.
 
-### Exercises
 
-1. Set a breakpoint on the panic function. Initiate a panic from the kernel menu and confirm that GDB hits the break point. Inspect the call stack and step up and down a few times before allowing the kernel to continue and sys161 to exit.
-2. Create a panic by modifying your OS/161 source code. Use GDB to find the source of the panic. If you are working with a partner, have your partner hide a panic in the source code and use GDB to find it. Then hide one for them. **Note:** Do not forget to recompile the kernel when you modify the code.
-3. Step through kernel boot, stepping in to and over a few of the boot helper functions that initialize various subsystems.
-4. Put a breakpoint on the kernel exception handler and step through it when it fires. Use it to determine what generates exceptions when your kernel is sitting idly at the menu. **Hint:** watch [Week 5 Video 3](https://web.microsoftstream.com/video/65b2e1a3-1d1f-4bee-8633-6dfb0ac7d4a6){:target="_blank"} again. Exception handling is architecture dependent. Consequently, you are likely to find the function handling exceptions in `kern/arch/mips`.
 
 ## Extra content
 
@@ -482,7 +474,7 @@ cd ~/build
 git clone -b v5.16.12 --single-branch git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
 ```
 You could replace "v5.16.12" by the kernel release of your choice. You can check
-the longterm and stable releases on this [website](https://www.kernel.org/){:target="_blank"}.
+the longterm and stable releases on this [website](https://www.kernel.org/)}.
 
 The next step is to configure the kernel:
 ```
