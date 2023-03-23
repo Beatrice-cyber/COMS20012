@@ -1,46 +1,51 @@
 # Lab 5: Introduction to OS/161
 
-You need to complete [LAB 1](./LAB1.html) in order to do this lab.
+In this lab, youw ill get familiar with Operating systems, explore OS/161 which an operating system made for teaching purposes. You will get to know how to configure and build operating systems.
+
+You need to complete [LAB 5](https://github.com/cs-uob/COMS20012/blob/master/docs/labs/lab%205.md) in order to do this lab.
 
 **Remote Access:** If you cannot run the lab on your local machine, you may want to use the Linux
-Lab Machine remotely. To do so follow [the online instructions](https://uob.sharepoint.com/sites/itservices/SitePages/fits-engineering-linux-x2go.aspx){:target="_blank"}.
+Lab Machine remotely. To do so follow [the online instructions](https://uob.sharepoint.com/sites/itservices/SitePages/fits-engineering-linux-x2go.aspx).
 If you experience difficulty contact the IT service.
 
-## Some notes
-
-Please, make sure you understand what the commands you are using in this lab do.
-The objective of this lab is to get you familiar with the development environment
-that you will be using for the next three labs.
-
-You should work setup groups of two students from within the groups that were
-setup at the beginning of the unit. Please,
-for your own benefit do not simply copy solutions from other groups, but instead
-understand what is going on. The labs are entirely formative this year, but it
-remains important to understand their content and to develop the related skills.
-Later in this lab, you will be asked to create a repository on github. This is
-how you will share code with the lecturers, your TA and your colleagues. When
-asking technical questions provide links to this repository, ideally pointing
-to the relevant portion of code.
-
-If you spot errors in the lab instructions, please, do drop a message in the Teams group. We will
-endeavor to fix any issue quickly.
-
-Finally, make sure you do the **exercises** properly.
 
 ## Tools
 
 You are second year computer science students and we expect some autonomy
 in using the "tools of the trade".
 You should be familiar (or familiarize yourself) with the following tools:
-1. [Vagrant](https://learn.hashicorp.com/tutorials/vagrant/getting-started-index?in=vagrant/getting-started){:target="_blank"};
-2. [VirtualBox](https://www.virtualbox.org/manual/ch01.html){:target="_blank"};
-3. [git](https://git-scm.com/docs/gittutorial){:target="_blank"};
-4. GDB, see [LAB 1](./LAB1.html){:target="_blank"}.
-
+1. [Vagrant](https://learn.hashicorp.com/tutorials/vagrant/getting-started-index?in=vagrant/getting-started);
+2. [VirtualBox](https://www.virtualbox.org/manual/ch01.html);
+3. [git](https://git-scm.com/docs/gittutorial);
+4. GDB, see [LAB 5](https://github.com/cs-uob/COMS20012/blob/master/docs/labs/lab%205.md).
 Please, make sure those tools are installed and that you know how to use them.
 You should have used them in previous labs in this unit, and others.
 Do get in touch with your TA if you are facing issues.
-You may also want to watch videos from [David's COMS10012](https://cs-uob.github.io/COMS10012/exercises/posix/act1/index.html){:target="_blank"}.
+
+## Installation
+
+ - (On Windows) Download https://git-scm.com/download/[Git for Windows].
+
+This includes a `bash` shell which you should use in lieu of the terrible
+Windows shell.
+
+ - (Required) If you already have https://www.virtualbox.org/[VirtualBox]
+installed, upgrade to the latest version.
+
+ - (Required) https://docs.vagrantup.com/v2/installation/[Install Vagrant]
+
+- (Suggested) Install two Vagrant plugins:
+
+ `vagrant plugin install vagrant-vbguest`.
+
+This ensure that your VirtualBox Guest Additions are up to date.
+
+ `vagrant plugin install vagrant-timezone`.
+
+This synchronizes time between your VM guest and host.
+
+Note that these plugins may be required to get certain Windows systems to
+work.
 
 ## Setting up vagrant image
 
@@ -55,8 +60,8 @@ vagrant reload
 
 ## Getting the source
 
-[OS/161](http://os161.eecs.harvard.edu/){:target="_blank"} has been developed and is maintained by [David Holland](http://www.hcs.harvard.edu/~dholland/){:target="_blank"} from [Harvard University](http://os161.eecs.harvard.edu/){:target="_blank"}.
-It was spearheaded by [Margo Seltzer](https://www.seltzer.com/margo/){:target="_blank"} for use in her famous Harvard course on operating systems, CS161.
+[OS/161](http://os161.eecs.harvard.edu/) has been developed and is maintained by [David Holland](http://www.hcs.harvard.edu/~dholland/) from [Harvard University](http://os161.eecs.harvard.edu/).
+It was spearheaded by [Margo Seltzer](https://www.seltzer.com/margo/) zbvvafor use in her famous Harvard course on operating systems, CS161.
 Since then, OS/161 has been adopted for teaching in many universities around the world.
 Operating systems courses that use OS/161 are known to be demanding, yet incredibly enriching and rewarding.
 
@@ -124,13 +129,13 @@ bmake install
 ## Running OS/161 kernel
 
 Now that your kernel is built, we are going to run it. To do so we are going to
-use [Sys-161](http://os161.eecs.harvard.edu/){:target="_blank"}.
+use [Sys-161](http://os161.eecs.harvard.edu/).
 System/161 is a machine simulator that provides a simplified but still realistic
 environment to run OS/161. Apart from floating point support and certain issues
 relating to RAM cache management, it provides an accurate emulation of a
 MIPS processor.
 
-You need a [configuration file](./sys161.conf){:target="_blank"} that we are going to place in `~/os161/root/`:
+You need a [configuration file](./sys161.conf) that we are going to place in `~/os161/root/`:
 ```
 cd ~/os161/root/
 wget https://cs-uob.github.io/COMS20012/labs/sys161.conf
@@ -462,17 +467,19 @@ it is surprisingly easy.
 
 First you need to ensure some dependencies are installed:
 ```
-apt-get update -qq
-apt-get install -y build-essential
-apt-get install -y flex bison bc 
-apt-get install -y libncurses-dev wget
-apt-get install -y git libssl-dev bc patch libedit-dev libelf-dev
-apt-get install -y module-init-tools
+sudo apt-get update -qq
+sudo apt-get install -y build-essential
+sudo apt-get install -y flex bison bc 
+sudo apt-get install -y libncurses-dev wget
+sudo apt-get install -y git libssl-dev bc patch libedit-dev libelf-dev
+sudo apt-get install -y module-init-tools
 ```
 
 As before we need to download the Linux kernel source code:
 ```
-cd ~/build && git clone -b v5.16.12 --single-branch git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
+cd ~/build
+
+git clone -b v5.16.12 --single-branch git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
 ```
 You could replace "v5.16.12" by the kernel release of your choice. You can check
 the longterm and stable releases on this [website](https://www.kernel.org/){:target="_blank"}.
