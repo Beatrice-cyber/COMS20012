@@ -18,9 +18,10 @@ However, from a privacy perspective, DoH is arguably preferable. With DoH, DNS q
 6. What is the goal of the TCP session hijacker? How can we prevent it? 
 Getting the session ID. 
 7. For what applications is SSH useful?
-
+For login and perfrom operations on remote computers, can also be used for transderring data.
 8. What is the difference between SYN Flooding Attack and TCP session hijacking? Can we prevent them? How? 
-
+SYN flooding attack is for amplifying messages, the hacker pretend to be victim and ping the servers, then the server respond with massive information causing a denial of serice at hte victim's end. We can prevent this by setting the server to not allow request if there are too many request from the person in a period. 
+TCP session hijacking is typically a man in the middle 
 10. Where does IPsec reside in a protocol stack?
 
 11. What is DHCP? How useful is it to help achieve security of IP addresses?
