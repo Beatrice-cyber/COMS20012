@@ -27,5 +27,19 @@ b. A law enforcement organization managing extremely sensitive investigative inf
 c. A financial organization managing routine administrative information (notprivacy-related information).
 d. An information system used for large acquisitions in a contracting organization contains both sensitive, pre-solicitation phase contract information and routine administrative information. Assess the impact for the two data sets separately and the information system as a whole.
 e. A power plant contains a SCADA (supervisory control and data acquisition) system controlling the distribution of electric power for a large military installation. The SCADA system contains both real-time sensor data and routine admin- istrative information. Assess the impact for the two data sets separately and the information system as a whole.
-*low -> high*
- a c d b e
+
+## Answers
+- **ANS A.1:** Integrity and Availability. **I** because none should be able to alter it in unintended way and **A** because it should be available to the public to see.
+- **ANS A.2:** becuase there will be no signal to get connected to the site if that was the intention of the attacker.
+- **ANS A.3:** a trojan horse can violate all of the CIA, by leaking info,modifying files, and deleting files. For AAA, it can sabotage authenticity. 
+- **ANS A.4:** CIA- availability, AAA- Accountability.
+- **ANS A.5:** using a encryption scheme that is not public, thinking that no one will break it if they don't know about. Anothe example is hard coded secrets in the binary thinking that no one will know about them.
+- **ANS A.6:** It is simple desigin, thus *economy of mechanism* prnciple is followed. However, proprietary encryption shceme is a bad idea (*Open design* principle). Protecting it with a PIN is good (confidentiality and Assurance). However, 4-digit PIN may be a weak protection.
+- **ANS A.7:** a. The system will have to assure confidentiality if it is being used to publish corporate proprietary material.
+b. The system will have to assure integrity if it is being used to laws or regulations.
+c. The system will have to assure availability if it is being used to publish a daily paper.
+- **ANS A.8:** a. An organization managing public information on its web server determines that there is no potential impact from a loss of confidentiality (i.e., confidentiality requirements are not applicable), a moderate potential impact from a loss of integrity, and a moderate potential impact from a loss of availability.
+b. A law enforcement organization managing extremely sensitive investigative information determines that the potential impact from a loss of confidentiality is high, the potential impact from a loss of integrity is moderate, and the potential impact from a loss of availability is moderate.
+c. A financial organization managing routine administrative information (not privacy-related information) determines that the potential impact from a loss of confidentiality is low, the potential impact from a loss of integrity is low, and the potential impact from a loss of availability is low.
+d. The management within the contracting organization determines that: (i) for the sensitive contract information, the potential impact from a loss of confidentiality is moderate, the potential impact from a loss of integrity is moderate, and the potential impact from a loss of availability is low; and (ii) for the routine administrative information (non-privacy-related information), the potential impact from a loss of confidentiality is low, the potential impact from a loss of integrity is low, and the potential impact from a loss of availability is low.
+e. The management at the power plant determines that: (i) for the sensor data being acquired by the SCADA system, there is no potential impact from a loss of confidentiality, a high potential impact from a loss of integrity, and a high potential impact from a loss of availability; and (ii) for the administrative information being processed by the system, there is a low potential impact from a loss of confidentiality, a low potential impact from a loss of integrity, and a low potential impact from a loss of availability. 
